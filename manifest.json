@@ -4,15 +4,15 @@
     "version": "1.0",
     "description": "Esta extensión permitirá el autorellenado de formularios a la hora de ingresar hojas de vida.",
     "icons": {
-        "128": "icon.png"
+        "128": "./images/icon.png"
     },
     "action": {
-        "default_popup": "popup.html"
+        "default_popup": "./popup/popup.html"
     },
     "content_scripts": [
         {
           "matches": ["<all_urls>"],
-          "js": ["popup.js"]
+          "js": ["./popup/popup.js"]
         }
     ],
     "permissions": ["storage","activeTab","declarativeContent"]
