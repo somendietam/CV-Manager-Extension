@@ -1,7 +1,10 @@
-const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-console.log('esteeselcontent.js');
+window.addEventListener('message', (event) => {
+    if (event.source !== window) return;
 
-if (userInfo) {
-  console.log('Información del usuario guardada:', userInfo);
-  // Aquí puedes usar la información como necesites
-}
+    if (event.data.type && event.data.type === 'FROM_PAGE') {
+        chrome.runtime.sendMessage({
+            action: 'saveSession',
+            userInfo: event.data.userInfo
+        });
+    }
+});

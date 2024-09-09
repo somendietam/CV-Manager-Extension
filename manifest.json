@@ -9,6 +9,9 @@
     "action": {
         "default_popup": "./popup/popup.html"
     },
+    "background": {
+        "service_worker": "./scripts/background.js"
+    },
     "content_scripts": [
         {
             "matches": [
@@ -22,6 +25,7 @@
     "permissions": [
         "storage",
         "activeTab",
-        "declarativeContent"
+        "declarativeContent",
+        "scripting"
     ]
 }
